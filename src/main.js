@@ -10,6 +10,7 @@ export default async ({ req, res, log, error }) => {
   const databaseId = req.bodyJson.$databaseId
   const collectionId = req.bodyJson.$collectionId
   const documentId = req.bodyJson.$id
+  log(req)
   log(`< [Database ID: ${databaseId}] >-----< [Collection ID: ${collectionId}] >-----< [document ID: ${documentId}] >`);
 
   try {
