@@ -7,8 +7,10 @@ export default async ({ req, res, log, error }) => {
     .setKey(req.headers['x-appwrite-key'] ?? '');
   const database = new Databases(client);
 
-  const doc = req.bodyJson.doc;
-  log(`< [DOC: ${doc}] >`);
+  const databaseId = req.bodyJson.$databaseId
+  const collectionId = req.bodyJson.$collectionId
+  const documentId = req.bodyJson.$id
+  log(`< [Database ID: ${databaseId}] >-----< [Collection ID: ${collectionId}] >-----< [document ID: ${documentId}] >`);
 
   try {
 
